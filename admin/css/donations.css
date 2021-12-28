@@ -1,0 +1,164 @@
+:root {
+    --grisoscuro: #070707;
+    --naranja: #ff4000;
+    --naranja-oscuro: #ff2e1b;
+    --celeste-claro: #008cff;
+    --celeste-oscuro: #1c3dff;
+    --blanco-hueso: #f4f4f4;
+}
+
+main.dark .table-list-amount.months .months {
+    color: #ff6b39;
+    opacity: 1;
+}
+
+main.dark .month-data {
+    font-weight: 400;
+}
+
+main.dark .month-data-card {
+    background: rgba(255, 255, 255, 0.07);
+    padding: 3px 5px;
+}
+
+main.dark .month-data-span {
+    font-weight: 500;
+}
+
+.table-list-amount.months {
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.table-list-amount.months .months {
+    font-size: 0.65em;
+    margin-top: 2px;
+    opacity: 0.8;
+    color: var(--naranja);
+}
+
+.table-list.per-country {
+    padding-bottom: 40px;
+}
+
+.month-title {
+    font-size: 0.9em;
+}
+
+.month-title.country {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.month-title.country .month-data-title {
+    max-width: 18px;
+}
+
+.country-flag {
+    margin-right: 10px;
+}
+
+.country-flag span {
+    display: flex;
+    width: 27px;
+    height: 27px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.country-flag span img {
+    object-fit: cover;
+    transform: scale(1.3);
+}
+
+.month-name {
+    font-size: 1.1em;
+    font-weight: 600;
+}
+
+.month-name .title-number {
+    font-size: 0.7em;
+    margin-bottom: 2px;
+}
+
+.month-data {
+    margin-top: 5px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 0.9em;
+}
+
+.month-data-card {
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    background: var(--blanco-hueso);
+    padding: 2px 5px;
+    border-radius: 4px;
+}
+
+.month-data-span {
+    font-weight: 600;
+    font-size: 0.95em;
+}
+
+.month-data-title {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    max-width: 30px;
+    display: inline-block;
+    margin-right: 3px;
+}
+
+@media screen and (min-width:768px) {
+    .donations .principal-card:nth-child(odd) {
+        grid-column: 1 / 7;
+    }
+    .donations .principal-card:nth-child(even) {
+        grid-column: 7 / 13;
+    }
+    .month-name {
+        font-size: 1em;
+    }
+    .month-data-title {
+        max-width: 35px;
+    }
+    .month-data {
+        font-size: 0.8em;
+    }
+}
+
+@media screen and (min-width:1300px) {
+    .donations .principal-card.one,
+    .donations .principal-card.four {
+        grid-column: 1 / 5;
+    }
+    .donations .principal-card.two,
+    .donations .principal-card.five {
+        grid-column: 5 / 9;
+    }
+    .donations .principal-card.three,
+    .donations .principal-card.six {
+        grid-column: 9 / 13;
+    }
+    .month-title {
+        font-size: 1.1em;
+    }
+    .month-title.country .month-data-title {
+        max-width: 50px;
+    }
+    .month-data {
+        font-size: 0.80em;
+        margin-top: 6px;
+    }
+    .month-data-title {
+        max-width: 100px;
+        margin-right: 7px;
+    }
+    .table-list.per-country {
+        padding-bottom: 0px;
+    }
+}

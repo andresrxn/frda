@@ -1,0 +1,464 @@
+:root {
+    --grisoscuro: #070707;
+    --naranja: #ff4000;
+    --naranja-oscuro: #ff2e1b;
+    --celeste-claro: #008cff;
+    --celeste-oscuro: #1c3dff;
+    --blanco-hueso: #f4f4f4;
+}
+
+main {
+    background: var(--blanco-hueso);
+    padding-bottom: 180px;
+    margin-bottom: -80px;
+}
+
+.banner {
+    width: 100%;
+    padding-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+}
+
+.banner-container {
+    width: 100%;
+}
+
+.banner-step {
+    position: relative;
+    width: 100%;
+}
+
+.banner-img {
+    width: 70%;
+    margin: auto;
+    display: none;
+    opacity: 0;
+    animation: opacity 1s ease forwards;
+}
+
+.banner-step-account {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    top: 0;
+    z-index: -1;
+}
+
+.banner-step-account .form {
+    max-width: 420px;
+}
+
+.banner-step-account .continue-container {
+    margin: auto;
+    max-width: 390px;
+    width: 85%;
+    margin-top: 30px;
+    border-bottom: 1px solid rgb(225, 225, 225);
+    padding-bottom: 25px;
+    margin-bottom: 10px;
+    position: relative;
+    animation: opacity 0.5s ease forwards;
+}
+
+.banner-step-account .continue-container.register {
+    margin-bottom: 18px;
+}
+
+.continue-container .continue-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    border-radius: 10px;
+    padding: 12px;
+    margin: 15px 0;
+    cursor: pointer;
+    font-size: 0.9em;
+}
+
+.continue-container .continue-card.gg {
+    color: var(--naranja);
+    background: #ff400020;
+}
+
+.continue-container .continue-card.fb {
+    color: #4d4fbd;
+    background: #4d4fbd20;
+}
+
+.continue-container .continue-icon {
+    margin-right: 13px;
+}
+
+.continue-container .continue-title p {
+    width: auto;
+    margin: 0;
+    font-weight: 600;
+    font-size: 0.95em;
+}
+
+.continue-container .continue-email {
+    position: absolute;
+    bottom: -7px;
+    padding: 0px 15px;
+    font-weight: 500;
+    font-size: 0.85em;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--blanco-hueso);
+    color: rgb(148, 148, 148);
+    width: max-content;
+}
+
+.banner-step-account .input-terms.session-open label {
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 0;
+}
+
+.banner-step-account .input-terms.session-open label p {
+    font-size: 1.25em;
+    opacity: 1;
+}
+
+.banner-step-account>* {
+    pointer-events: none;
+}
+
+.banner-step-account.active {
+    opacity: 1;
+    animation: ShowUp 0.4s ease forwards;
+    pointer-events: auto;
+    position: relative;
+    z-index: 500;
+    top: 0;
+}
+
+.banner-step-account.active>* {
+    pointer-events: auto;
+}
+
+.banner-step-account .form-container {
+    margin-top: 20px;
+}
+
+.banner-step-account h2 {
+    margin-top: 30px;
+}
+
+.account-buttons-container {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 25px;
+}
+
+.name-group {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    height: auto;
+}
+
+.name-group .form-control:first-child {
+    margin-right: 10px;
+}
+
+.account-button {
+    margin-bottom: 20px;
+    text-align: center;
+    display: inline-block;
+    font-weight: 600;
+    font-size: 1.05em;
+    transition: transform 0.2s;
+}
+
+.account-button:active {
+    transform: scale(0.96);
+}
+
+.account-button .icon {
+    font-size: 0.8em;
+    transition: 0.2s;
+}
+
+.section-img {
+    width: 100%;
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+}
+
+.section-img img {
+    width: 100px;
+}
+
+.forgot-pass {
+    display: inline;
+}
+
+.forgot-pass p {
+    display: inline;
+    color: var(--celeste-claro);
+    text-decoration: 1px var(--celeste-claro);
+    font-size: 0.9em;
+    text-align: left;
+    z-index: 500;
+    padding-bottom: 5px;
+    cursor: pointer;
+}
+
+.form-control.input-login-password label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.show-pass {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 28px;
+    right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.show-pass .icon {
+    opacity: 0.5;
+}
+
+.register {
+    color: var(--celeste-claro);
+}
+
+.question span {
+    color: var(--celeste-claro);
+}
+
+.step {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+    pointer-events: none;
+    max-width: 400px;
+}
+
+.step.active {
+    opacity: 1;
+    pointer-events: auto;
+    position: fixed;
+    z-index: 3000;
+    top: calc(50% + 20px);
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--blanco-hueso);
+    padding: 20px;
+    width: 90%;
+    border-radius: 12px;
+    animation: opacity 0.5s ease forwards;
+}
+
+.step h3 {
+    text-align: center;
+}
+
+.step h3 .icon {
+    font-size: 0.95em;
+    margin-left: 5px;
+    color: #2ecc71;
+}
+
+.step p {
+    text-align: center;
+    font-size: 1em;
+    font-weight: 500;
+    line-height: 1.4;
+    margin-top: 12px;
+    opacity: 0.8;
+}
+
+.step.four p {
+    width: 90%;
+    margin: auto;
+    margin-bottom: 10px;
+}
+
+.step .form {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.enter-email .form-container {
+    margin-top: 30px;
+}
+
+.enter-email .form-control .inputIcon {
+    top: 12px;
+}
+
+.enter-email .form-control input[type=password]::placeholder {
+    letter-spacing: 0px;
+}
+
+.enter-email .show-pass {
+    top: 6px;
+}
+
+.step-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.step-img img {
+    width: 80%;
+}
+
+@media screen and (min-width:760px) {
+    .banner-step-account h1~p {
+        font-size: 1.3em;
+    }
+    .account-button {
+        font-size: 1.4em;
+        cursor: pointer;
+    }
+    .question {
+        font-size: 0.9em;
+    }
+    .question span {
+        cursor: pointer;
+    }
+    .banner-step-account .input-terms.session-open label p {
+        font-size: 1.2em;
+        cursor: pointer;
+    }
+    .close-donation {
+        width: 45px;
+        height: 45px;
+        font-size: 1.4em;
+        top: 70px;
+    }
+    .enter-email .form button {
+        max-width: 100%;
+    }
+}
+
+@media screen and (min-width:1000px) {
+    main {
+        margin-bottom: -120px;
+    }
+    .banner {
+        padding-top: 115px;
+        padding-bottom: 50px;
+    }
+    .banner-container {
+        display: flex;
+        width: 90%;
+        align-items: flex-start;
+        justify-content: space-between;
+        margin: auto;
+        max-width: 1200px;
+        position: relative;
+    }
+    .banner-step {
+        margin-left: 50px;
+    }
+    .banner-step .form-container {
+        width: 100%;
+        margin-left: 0;
+    }
+    .banner-step h2 {
+        font-size: 3em;
+        margin-top: 0px;
+    }
+    .banner-img {
+        max-width: 40%;
+        margin: 0;
+        display: block;
+    }
+    .banner-step-account h1~p {
+        font-size: 1.2em;
+    }
+    .banner-step-account {
+        right: 0;
+    }
+    .banner-step-account .form {
+        margin-top: 0px;
+        max-width: 460px;
+    }
+    .account-button {
+        font-size: 1em;
+    }
+    .account-button .icon {
+        font-size: 0.7em;
+    }
+    .banner-step-account .form {
+        width: 80%;
+    }
+    .continue-container .continue-card {
+        font-size: 1em;
+    }
+    .continue-container .continue-card.gg:hover {
+        background: #ff400030;
+    }
+    .continue-container .continue-card.fb:hover {
+        background: #4d4fbd30;
+    }
+    .enter-email .form-container {
+        width: 100%;
+        margin: 0;
+        margin-top: 20px;
+    }
+    .close-donation {
+        width: 45px;
+        font-size: 1.45em;
+        height: 45px;
+        cursor: pointer;
+    }
+}
+
+@media screen and (min-width:1300px) {
+    .banner {
+        padding-bottom: 50px;
+        min-height: 90vh;
+    }
+    .banner-container {
+        width: 83%;
+    }
+    .banner-step {
+        margin-left: 30px;
+    }
+    .banner-step h2 {
+        font-size: 3.3em;
+    }
+    .banner-img {
+        max-width: 45%;
+    }
+    .banner-step-account h1 {
+        font-size: 4.2em;
+    }
+    .banner-step-account h1~p {
+        font-size: 1.8em;
+        margin-bottom: 40px;
+    }
+    .account-button {
+        font-size: 1.35em;
+    }
+    .banner-step-account .continue-container {
+        max-width: 430px;
+    }
+    .show-pass {
+        top: 31px;
+    }
+}

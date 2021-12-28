@@ -1,0 +1,377 @@
+:root {
+    --grisoscuro: #070707;
+    --naranja: #ff4000;
+    --naranja-oscuro: #ff2e1b;
+    --celeste-claro: #008cff;
+    --celeste-oscuro: #1c3dff;
+    --blanco-hueso: #f4f4f4;
+}
+
+main {
+    margin-top: 50px;
+}
+
+.banner {
+    padding-top: 20px;
+    overflow: hidden;
+    padding-bottom: 150px;
+}
+
+.banner-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    animation: opacity 1s ease forwards;
+}
+
+.banner-title .h1 {
+    width: 90%;
+}
+
+.banner-title h1~p {
+    width: 90%;
+}
+
+.banner-title>span {
+    display: inline-block;
+    font-weight: 500;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    font-size: 0.8em;
+    padding: 7px 20px;
+    border-radius: 7px;
+    color: #616161;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.banner-container .form {
+    background: var(--blanco-hueso);
+    margin-top: 25px;
+    width: 93%;
+    padding: 15px;
+}
+
+.banner-container .form .form-img {
+    padding: 0;
+    margin-bottom: 60px;
+    flex-direction: column;
+}
+
+.img-contact {
+    position: relative;
+    margin-top: 30px;
+    width: 95%;
+    padding-bottom: 30px;
+}
+
+.img-contact p {
+    width: 80%;
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 5px;
+    font-size: 0.75em;
+    font-weight: 400;
+    color: rgb(97, 97, 97);
+    display: inline;
+    z-index: 500;
+    background: var(--blanco-hueso);
+}
+
+.img-contact::before {
+    content: "";
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    background: rgb(211, 211, 211);
+    height: 2px;
+    z-index: 200;
+    position: absolute;
+}
+
+.img-card a {
+    display: inline-block;
+    width: 100%;
+    border-radius: 10px;
+    padding: 11px 0;
+    font-size: 0.85em;
+    text-align: center;
+    text-decoration: none;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.img-card a .icon {
+    margin-right: 5px;
+}
+
+.img-card.img-whatsapp a {
+    background: rgba(3, 255, 3, 0.22);
+    color: rgb(8, 160, 8);
+}
+
+.img-card.img-messenger a {
+    color: rgb(19, 100, 221);
+    background: rgba(9, 101, 240, 0.12);
+}
+
+.banner-container .form-img img {
+    max-width: 90%;
+}
+
+.input-check {
+    position: relative;
+}
+
+.checkbox-block {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 10px;
+    border-radius: 7px;
+}
+
+.checkbox-block small {
+    font-size: 0.8em;
+    margin-top: 10px;
+}
+
+.checkbox-effect:not(:checked),
+.checkbox-effect:checked {
+    position: absolute;
+    left: -9999px;
+}
+
+.checkbox-block label {
+    cursor: pointer;
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin: 13px 0;
+    margin-left: 10px;
+    font-weight: 500 !important;
+}
+
+
+/* checkbox effect #2 */
+
+.checkbox-effect-2:not(:checked)+label:before,
+.checkbox-effect-2:checked+label:before {
+    content: "";
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border: 2px solid #5a5a5a;
+    box-sizing: border-box;
+    border-radius: 10px;
+    margin-right: 20px;
+    transition-property: all;
+    transition-duration: 0.1s;
+    transition-timing-function: linear;
+}
+
+.checkbox-effect-2:not(:checked)+label:after,
+.checkbox-effect-2:checked+label:after {
+    content: "✔";
+    font-size: 18px;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0px;
+    color: var(--celeste-claro);
+}
+
+.checkbox-effect-2:checked+label {
+    color: var(--celeste-claro);
+}
+
+.checkbox-effect-2:not(:checked)+label:after {
+    opacity: 0;
+    transition-property: all;
+    transition-duration: 0.1s;
+    transition-timing-function: linear;
+    transition-delay: 0s;
+}
+
+.checkbox-effect-2:checked+label:before {
+    opacity: 0;
+    transition-property: all;
+    transition-duration: 0.1s;
+    transition-timing-function: linear;
+    transition-delay: 0s;
+}
+
+.checkbox-effect-2:checked+label:after {
+    opacity: 1;
+    transition-property: all;
+    transition-duration: 0.1s;
+    transition-timing-function: linear;
+}
+
+.help-info {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.help-info p {
+    width: 95%;
+    margin: 0;
+    font-size: 0.75em;
+    color: rgb(158, 158, 158);
+    text-align: left;
+    font-weight: 500;
+}
+
+.help-info .icon {
+    display: inline;
+    margin-right: 5px;
+}
+
+.email-sent {
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 1s ease;
+    position: absolute;
+}
+
+.email-sent.active {
+    position: fixed;
+    top: 53%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    margin: auto;
+    border-radius: 10px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    z-index: 3000;
+    pointer-events: auto;
+    opacity: 1;
+}
+
+.email-sent .img {
+    width: 80%;
+    margin: auto;
+}
+
+.email-sent .content {
+    margin-top: 20px;
+    text-align: center;
+    width: 100%;
+}
+
+.email-sent h3 {
+    font-size: 1.25em;
+}
+
+.email-sent p {
+    margin-top: 10px;
+    line-height: 1.5;
+    font-size: 0.9em;
+    font-weight: 500;
+    margin-bottom: 25px;
+}
+
+.email-sent button {
+    margin-bottom: 0px;
+}
+
+.email-sent .icon {
+    color: var(--naranja-oscuro);
+}
+
+
+/*++++++++++++++++++++*/
+
+@media screen and (min-width:760px) {
+    .banner .form {
+        padding: 40px;
+    }
+    .banner-title h1~p span {
+        display: block;
+    }
+    .banner-title p {
+        width: 75%;
+        margin-top: 15px;
+    }
+    .banner-title h1~p {
+        font-size: 1.3em;
+    }
+    .img-card a {
+        padding: 13px 0;
+        font-size: 1em;
+    }
+    .img-contact p {
+        width: 60%;
+        font-size: 0.9em;
+    }
+}
+
+@media screen and (min-width:1000px) {
+    .banner-title h1~p {
+        width: 80%;
+        font-size: 1.6em;
+        margin-top: 15px;
+    }
+    .checkbox-block label:hover {
+        opacity: 0.8;
+    }
+    .banner-title>span {
+        font-size: 1.2em;
+        padding: 7px 25px;
+    }
+    .banner-container {
+        max-width: 1400px;
+        margin: auto;
+    }
+    .banner-container .form {
+        padding: 50px;
+    }
+    .img-contact p,
+    .img-contact::before {
+        display: none;
+    }
+    .img-card.img-whatsapp a:hover {
+        background: rgba(3, 255, 3, 0.3);
+    }
+    .img-card.img-messenger a:hover {
+        background: rgba(9, 101, 240, 0.2);
+    }
+}
+
+@media screen and (min-width:1300px) {
+    .banner-title h1~p {
+        width: 65%;
+        font-size: 1.7em;
+    }
+    .banner-title h1~p.mothers {
+        width: 65%;
+        font-size: 1.9em;
+    }
+    .banner-title h1~p.invalid {
+        font-size: 1.9em;
+    }
+    .img-card a {
+        padding: 15px;
+        margin-bottom: 15px;
+        font-size: 1.1em;
+    }
+    .img-contact {
+        width: 80%;
+    }
+    .help-info p {
+        font-size: 0.75em;
+    }
+}
+
+
+/*++++++++++++++++++*/
